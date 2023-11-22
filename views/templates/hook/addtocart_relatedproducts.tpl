@@ -1,3 +1,4 @@
+{extends file='modules/ps_crossselling/views/templates/hook/ps_crossselling.tpl'}
 {assign var="MyHoverColor" value={$btnColorHover}}
 
 <style type="text/css">
@@ -5,8 +6,7 @@
     background-color: {$MyHoverColor} !important;
     {rdelim}
 </style>
-
-<div class="blockBtnAddAndQuantity">
+    <div class="blockBtnAddAndQuantity">
     {if $btnDisplayQuantity == 0}
         <div class="divBtnAddToCart">
             <a href="{$links->getAddToCartURL($product.id_product,$product.id_product_attribute)}">
@@ -23,7 +23,7 @@
                 <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
                 <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id" class="js-product-customization-id">
                 {if !$configuration.is_catalog}
-                  <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+                
                     {block name='product_quantity'}
                       <div class="product-quantity clearfix divFormQtyBtn">
                         <div class="qty">
@@ -47,10 +47,10 @@
                             >
                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
 
-                            {* <span class="input-group-btn-vertical">
+                            <span class="input-group-btn-vertical">
                               <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button"><i class="material-icons touchspin-up"></i></button>
                               <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button"><i class="material-icons touchspin-down"></i></button>
-                            </span> *}
+                            </span>
 
                           </div>
                         </div>

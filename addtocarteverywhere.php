@@ -275,7 +275,7 @@ class AddToCartEverywhere extends Module
     {
 
         $links = new Link();
-        // dump(Context::getContext()->controller);
+        // dump($params["product"]);
 
         if (Configuration::get('POPULAIRESBUTTON') == 1 && Context::getContext()->controller->php_self == 'index') {
             
@@ -295,8 +295,8 @@ class AddToCartEverywhere extends Module
             return $this->display(__FILE__, '/views/templates/hook/addtocart.tpl');
         }
 
-        if(Configuration::get('RELATEDBUTTON') == 1)
-        {
+        if (Configuration::get('RELATEDBUTTON') == 1 && Context::getContext()->controller->php_self == 'product') {
+            
             $this->smarty->assign(
                 array(
                     'context' => Context::getContext()->controller,
@@ -312,7 +312,6 @@ class AddToCartEverywhere extends Module
     
             return $this->display(__FILE__, '/views/templates/hook/addtocart.tpl');
         }
-
 
         if(Configuration::get('CATEGORIEBUTTON') == 1 && Context::getContext()->controller->php_self == 'category')
         {
@@ -356,7 +355,6 @@ class AddToCartEverywhere extends Module
 
     public function hookDisplayHeader()
     {
-        // dump($this->context);
         $this->context->controller->registerStylesheet('css-hovercarousel','modules/addtocarteverywhere/views/css/style.css');
     }
 

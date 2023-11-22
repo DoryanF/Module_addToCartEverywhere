@@ -8,7 +8,6 @@
 }
 
 .blockBtnAddAndQuantity{
-    margin: 1em 0 0 1em;
     display: flex;
 }
 
@@ -16,5 +15,9 @@
     display: none !important;
 }
 .divBtnAddToCart{
-    margin-right: 3%;
+    margin-left: 20%;
+}
+
+.divFormQtyBtn{
+    display: -webkit-box !important;
 }
